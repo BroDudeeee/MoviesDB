@@ -18,9 +18,8 @@ const Layout = ({ title, children }) => {
           </div>
         </header>
         <main className="m-auto mt-4 ml-4">{children}</main>
-        <footer className="flex items-center justify-center h-14 shadow-inner">
-          Copyright &copy; 2022 MeCommerce By{" "}
-          <span className="font-semibold text-lg">Ahmed Morsy</span>
+        <footer className="flex items-center justify-center h-16 shadow-inner font-semibold">
+          Copyright &copy; 2022 MeCommerce By Ahmed Morsy
         </footer>
       </nav>
     </div>
