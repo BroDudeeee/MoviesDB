@@ -1,14 +1,7 @@
-import Head from "next/head";
+import Layout from "../components/Layout";
 
 const Home = () => {
-  return (
-    <div>
-      <Head>
-        <title>Next Amazon</title>
-      </Head>
-      <h1>Home Page</h1>
-    </div>
-  );
+  return <Layout title="HomePage">Home Page</Layout>;
 };
 
 export default Home;
