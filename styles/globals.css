@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.card {
-  @apply mb-5 block rounded-lg border border-gray-200 shadow-md overflow-hidden;
+@layer base {
+  body {
+    @apply bg-gray-100;
+  }
 }
-
-.primary-button {
-  @apply border bg-amber-300 hover:bg-amber-400 active:bg-amber-500 py-2 px-4 rounded font-semibold mt-2;
+@layer components {
+  .intent {
+    @apply flex justify-between items-center hover:shadow-xl p-4 cursor-pointer rounded-lg text-black bg-white max-w-md mx-auto xl:mx-0;
+  }
 }

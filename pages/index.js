@@ -1,17 +1,33 @@
-import Layout from "../components/Layout";
-import ProductItem from "../components/ProductItem";
-import data from "../utils/data";
+import { getProviders, signOut } from "next-auth/react";
+import Head from "next/head";
 
-const Home = () => {
+const Home = ({ providers }) => {
   return (
-    <Layout title="HomePage">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-8 mb-10">
-        {data.products.map((product) => (
-          <ProductItem key={product.id} product={product} />
-        ))}
-      </div>
-    </Layout>
+    <div>
+      <Head>
+        <title>Linkedin</title>
+      </Head>
+      {Object.values(providers).map((provider) => (
+        <div key={provider.name}>
+          <button
+            onClick={() => signOut(provider.id, { callbackUrl: "/home" })}
+          >
+            Sign Out
+          </button>
+        </div>
+      ))}
+    </div>
   );
 };
 
 export default Home;
+
+export async function getServerSideProps() {
+  const providers = await getProviders();
+
+  return {
+    props: {
+      providers,
+    },
+  };
+}
