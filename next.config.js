@@ -1,6 +1,10 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["rb.gy"],
+    domains: [
+      "cdn-icons-png.flaticon.com",
+      "images.pexels.com",
+      "lh3.googleusercontent.com",
+    ],
   },
 };

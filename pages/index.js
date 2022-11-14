@@ -1,33 +1,15 @@
-import { getProviders, signOut } from "next-auth/react";
 import Head from "next/head";
 
-const Home = ({ providers }) => {
+const Home = () => {
   return (
     <div>
       <Head>
-        <title>Linkedin</title>
+        <title>Learnig Nextjs with Firebase</title>
       </Head>
-      {Object.values(providers).map((provider) => (
-        <div key={provider.name}>
-          <button
-            onClick={() => signOut(provider.id, { callbackUrl: "/home" })}
-          >
-            Sign Out
-          </button>
-        </div>
-      ))}
+
+      <main className="max-w-4xl mx-auto p-3">Hey</main>
     </div>
   );
 };
 
 export default Home;
-
-export async function getServerSideProps() {
-  const providers = await getProviders();
-
-  return {
-    props: {
-      providers,
-    },
-  };
-}
